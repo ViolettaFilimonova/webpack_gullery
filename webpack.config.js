@@ -3,7 +3,7 @@ const MiniCssPlugin = require('mini-css-extract-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    entry: './DateDiff/js/index.js',
+    entry: resolve(__dirname, 'src', 'main.js'),
     output: {
         filename: 'main.[contenthash].js',
         path: resolve(__dirname, 'build')
@@ -29,7 +29,7 @@ module.exports = {
     },
     plugins: [
         new HtmlPlugin({
-            template: resolve(__dirname, './DateDiff/index.html')
+            template: resolve(__dirname, 'src', 'index.html')
         }),
         new MiniCssPlugin({
             filename: '[name].[contenthash].css',
